@@ -9,7 +9,7 @@ Move file completed to top folder.\
 
 I. replace **/DOWNLOAD_DIR** and **/CONFIG_DIR** for save data, and **YOUR_SECRET_CODE** for security;
 
-replace **AUTH_USERNAME** and **AUTH_PASSWD** to verify the identity of the browse file web page if you need.
+replace **YOUR_AUTH_USERNAME** and **YOUR_AUTH_PASSWD** to verify the identity of the browse file web page if you need.
 
 Run command below
 
