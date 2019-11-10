@@ -2,9 +2,7 @@ FROM alpine:edge
 
 MAINTAINER Eliot <eliotjoking@gmail.com>
 
-COPY files/start.sh /conf-copy/start.sh
-COPY files/aria2.conf /conf-copy/aria2.conf
-COPY files/on-complete.sh /conf-copy/on-complete.sh
+COPY files/conf-copy /conf-copy
 COPY files/darkhttpd /usr/local/bin/darkhttpd
 ADD files/webui-aria2.tar.gz /
 
