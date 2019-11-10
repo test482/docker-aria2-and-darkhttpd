@@ -8,8 +8,7 @@ ADD files/webui-aria2.tar.gz /
 
 WORKDIR /
 
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories && \
-    apk update && \
+RUN apk update && \
     apk upgrade && \
     apk add --no-cache --update bash && \
     apk add --no-cache --update aria2 && \
