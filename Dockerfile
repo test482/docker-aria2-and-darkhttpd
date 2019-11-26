@@ -4,17 +4,17 @@ MAINTAINER Eliot <eliotjoking@gmail.com>
 
 COPY files/conf-copy /conf-copy
 COPY files/darkhttpd /usr/local/bin/darkhttpd
-ADD files/webui-aria2.tar.gz /
 
-WORKDIR /
-
-RUN apk update && \
-    apk upgrade && \
-    apk add --no-cache --update bash && \
-    apk add --no-cache --update aria2 && \
-    chmod +x /conf-copy/start.sh && \
-    chmod +x /usr/local/bin/darkhttpd && \
-    rm /aria2-webui/.git* -rf
+RUN buildDeps='git' \
+    && apk update \
+    && apk upgrade \
+    && apk add --no-cache --update $buildDeps \
+    && apk add --no-cache --update bash aria2 \
+    && chmod +x /conf-copy/start.sh \
+    && chmod +x /usr/local/bin/darkhttpd \
+    && git clone https://github.com/ziahamza/webui-aria2.git /webui-aria2 \
+    && rm /webui-aria2/.git* -rf \
+    && apk del $buildDeps
 
 VOLUME ["/data","/conf"]
 
