@@ -22,6 +22,7 @@ Run command below
     -p 6888:8080 \
     -v /DOWNLOAD_DIR:/data \
     -v /CONFIG_DIR:/conf \
+    -v /etc/localtime:/etc/localtime:ro \
     -e SECRET=YOUR_SECRET_CODE \
     -e AUTH_USERNAME=YOUR_AUTH_USERNAME \
     -e AUTH_PASSWD=YOUR_AUTH_PASSWD \
