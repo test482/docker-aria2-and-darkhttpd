@@ -18,6 +18,6 @@ RUN buildDeps='git' \
 
 VOLUME ["/data","/conf"]
 
-EXPOSE 6800 80 8080
+EXPOSE 6800 6881 6881/udp 80 8080
 
 CMD ["/conf-copy/start.sh"]

@@ -1,6 +1,6 @@
 # Aria2 with webui
 
-26.8Mb image size.\
+About 30Mb image size.\
 Edit config file out of the image.\
 Move file completed to top folder.\
 (Tasks that contains more than one files will not be moved.) 
@@ -15,6 +15,8 @@ Run command below
 
     sudo docker run -d \
     --name aria2-with-webui \
+    -p 6881:6881 \
+    -p 6881:6881/udp \
     -p 6800:6800 \
     -p 6880:80 \
     -p 6888:8080 \
@@ -47,5 +49,7 @@ Thanks to the repository write below for given help of this repository.
 [XUJINKAI/aria2-with-webui](https://github.com/XUJINKAI/aria2-with-webui) Most help in code.
 
 [ryanmjacobs/darkhttpd](https://github.com/ryanmjacobs/darkhttpd) provided darkhttpd-with-auth.
+
+[P3TERX/aria2_perfect_config](https://github.com/P3TERX/aria2_perfect_config) aria2_perfect_config.
 
 All of you make Open Source more colorful. :) Thanks.
