@@ -1,38 +1,37 @@
-# Aria2 with webui
+# Docker aria2 and darkhttpd
 
-About 30Mb image size.\
-Edit config file out of the image.\
-Move file completed to top folder.\
-(Tasks that contains more than one files will not be moved.) 
+Small image size, about 26 MB.\
+quick deploy『aria2 and get files』 on server.
 
 ## Install
 
 I. replace **/DOWNLOAD_DIR** and **/CONFIG_DIR** for save data, and **YOUR_SECRET_CODE** for security;
 
-replace **YOUR_AUTH_USERNAME** and **YOUR_AUTH_PASSWD** to verify the identity of the browse file web page if you need.
+replace **YOUR_AUTH_USERNAME** and **YOUR_AUTH_PASSWD** to verify identity of the browse file web page if you need.
 
 Run command below
 
     sudo docker run -d \
-    --name aria2-with-webui \
+    --name aria2-and-darkhttpd \
+    -p 6800:6800 \
     -p 6881:6881 \
     -p 6881:6881/udp \
-    -p 6800:6800 \
-    -p 6880:80 \
-    -p 6888:8080 \
+    -p 6888:80 \
     -v /DOWNLOAD_DIR:/data \
     -v /CONFIG_DIR:/conf \
     -v /etc/localtime:/etc/localtime:ro \
     -e SECRET=YOUR_SECRET_CODE \
     -e AUTH_USERNAME=YOUR_AUTH_USERNAME \
     -e AUTH_PASSWD=YOUR_AUTH_PASSWD \
-    test482/docker-aria2-with-webui
+    test482/docker-aria2-and-darkhttpd
 
-II. Open `http://serverip:6880/` for aria2-webui, open `http://serverip:6888/` to browse data folder.
+II. Choose an online version webui 『 [AriaNg](http://ariang.mayswind.net/latest) or [webui-aria2](https://ziahamza.github.io/webui-aria2) 』 to manage aria2, or any other way you want.
+
+open `http://serverip:6888/` to browse data folder.
 
 ## Build
 
-`sudo docker build -f Dockerfile -t test482/docker-aria2-with-webui .`  
+`sudo docker build -f Dockerfile -t test482/docker-aria2-and-darkhttpd .`  
 
 ## Link
 
