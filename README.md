@@ -1,7 +1,7 @@
 # Docker aria2 and darkhttpd
 
 Small image size, about 26 MB.\
-quick deploy『aria2 and get files』 on server.
+quick deploy『 aria2 and get files 』 on server.
 
 ## Install
 
