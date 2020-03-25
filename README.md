@@ -1,17 +1,23 @@
-# Docker aria2 and darkhttpd
+# docker aria2 and darkhttpd
 
-Small image size, about 26 MB.\
-quick deploy『 aria2 and get files 』 on server.
+small image size, about 26 MB.
+
+quick deploy aria2 and darkhttpd on complex environments linux server.
 
 ## Install
 
-I. replace **/DOWNLOAD_DIR** and **/CONFIG_DIR** for save data, and **YOUR_SECRET_CODE** for security;
+I. replace **/DOWNLOAD_DIR** for save data;
 
-replace **YOUR_AUTH_USERNAME** and **YOUR_AUTH_PASSWD** to verify identity of the browse file web page if you need.
+replace **/CONFIG_DIR** for aria2 configuration file;
 
-Run command below
+replace **YOUR_SECRET_CODE** for aria2 security code;
 
-    sudo docker run -d \
+if you need, replace **YOUR_AUTH_USERNAME** and **YOUR_AUTH_PASSWD** for confirm identity when browsing data pages.
+
+run command below:
+
+```bash
+sudo docker run -d \
     --name aria2-and-darkhttpd \
     -p 6800:6800 \
     -p 6881:6881 \
@@ -24,32 +30,24 @@ Run command below
     -e AUTH_USERNAME=YOUR_AUTH_USERNAME \
     -e AUTH_PASSWD=YOUR_AUTH_PASSWD \
     test482/docker-aria2-and-darkhttpd
+```
 
-II. Choose an online version webui 『 [AriaNg](http://ariang.mayswind.net/latest) or [webui-aria2](https://ziahamza.github.io/webui-aria2) 』 to manage aria2, or any other way you want.
+II. choose an online version webui 『 [AriaNg](http://ariang.mayswind.net/latest) or [webui-aria2](https://ziahamza.github.io/webui-aria2) 』 to manage aria2, or any other way you want.
 
 open `http://serverip:6888/` to browse data folder.
 
 ## Build
 
-`sudo docker build -f Dockerfile -t test482/docker-aria2-and-darkhttpd .`  
-
-## Link
-
-<https://github.com/aria2/aria2>\
-<https://github.com/ziahamza/webui-aria2>  
-
-<https://github.com/acgotaku/BaiduExporter>  
+`sudo docker build -f Dockerfile -t test482/docker-aria2-and-darkhttpd .`    
 
 ## Thanks
 
 Thanks to the repository write below for given help of this repository.
 
-[Docker — 从入门到实践](https://docker_practice.gitee.io/zh-cn/) Where I get knowledge.
+[Docker — 从入门到实践](https://docker_practice.gitee.io/zh-cn/) learn about docker.
 
-[XUJINKAI/aria2-with-webui](https://github.com/XUJINKAI/aria2-with-webui) Most help in code.
+[XUJINKAI/aria2-with-webui](https://github.com/XUJINKAI/aria2-with-webui) most help in code.
 
 [ryanmjacobs/darkhttpd](https://github.com/ryanmjacobs/darkhttpd) provided darkhttpd-with-auth.
 
 [P3TERX/aria2_perfect_config](https://github.com/P3TERX/aria2_perfect_config) aria2_perfect_config.
-
-All of you make Open Source more colorful. :) Thanks.
