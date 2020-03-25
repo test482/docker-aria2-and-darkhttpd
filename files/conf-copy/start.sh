@@ -7,11 +7,7 @@ if [ ! -f /conf/aria2.conf ]; then
     fi
 fi
 
-if [ ! -f /conf/dht.dat ]; then
-    touch /conf/dht.dat
-fi
-
-touch /conf/aria2.session
+touch /conf/dht.dat /conf/dht6.dat /conf/aria2.session
 
 if [ "${AUTH_USERNAME}" ] && [ "${AUTH_PASSWD}" ]; then
     darkhttpd /data --port 80 --auth "${AUTH_USERNAME}":"${AUTH_PASSWD}" &
