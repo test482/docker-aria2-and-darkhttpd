@@ -4,6 +4,8 @@ small image size, about 26 MB.
 
 quick deploy aria2 and darkhttpd on complex environments linux server.
 
+[README in Chinese 中文简介](https://github.com/test482/docker-aria2-and-darkhttpd/blob/master/README.zh_CN.md)
+
 ## Install
 
 I. replace **/DOWNLOAD_DIR** for save data;
