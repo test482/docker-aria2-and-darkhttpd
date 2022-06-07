@@ -40,7 +40,7 @@ II. 选择一个在线网页控制端 『 [AriaNg](http://ariang.mayswind.net/la
 
 大多数情况你并不需要自己编译 docker 镜像，只要用上面的指令从 Docker Hub 获取就好。
 
-`sudo docker build -f Dockerfile -t test482/docker-aria2-and-darkhttpd .`    
+`sudo docker build -f Dockerfile -t test482/docker-aria2-and-darkhttpd .`
 
 ## 感谢
 

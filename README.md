@@ -40,7 +40,7 @@ open `http://serverip:6888/` to browse data folder.
 
 ## Build
 
-`sudo docker build -f Dockerfile -t test482/docker-aria2-and-darkhttpd .`    
+`sudo docker build -f Dockerfile -t test482/docker-aria2-and-darkhttpd .`
 
 ## Thanks
 
